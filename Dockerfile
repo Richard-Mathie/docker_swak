@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM ubuntu:latest
 
 WORKDIR /build
 
@@ -16,6 +16,6 @@ RUN apt-get update -y && \
 
 RUN apt-get update -y && \
     apt-get install -y dnsutils curl && \
-    
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENTRYPOINT ["bash"]
